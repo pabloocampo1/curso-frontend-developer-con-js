@@ -5,10 +5,10 @@ const menuDestok = document.querySelector('.desktop-menu');
 const navbarEmail = document.querySelector('.navbar-email');
 
 navbarEmail.addEventListener("click", function() {
-   const isAsideclosed =  detallesProductos.classList.contains('inactive');
+   const isAsideclosed =  chopingCardContainer.classList.contains('inactive');
    
    if (!isAsideclosed){
-      detallesProductos.classList.add('inactive');
+      chopingCardContainer.classList.add('inactive');
    }
 
    menuDestok.classList.toggle('inactive');
@@ -22,10 +22,10 @@ navbarEmail.addEventListener("click", function() {
  const logoMenuMobile = document.querySelector('.menuLogo');
 
  logoMenuMobile.addEventListener("click", function() {
-   const isAsideclosed =  detallesProductos.classList.contains('inactive');
+   const isAsideclosed =  chopingCardContainer.classList.contains('inactive');
    
    if (!isAsideclosed){
-      detallesProductos.classList.add('inactive');
+      chopingCardContainer.classList.add('inactive');
    }
 
    menuMobile.classList.toggle('inactive');
@@ -35,7 +35,7 @@ navbarEmail.addEventListener("click", function() {
  //carrito de compras (mostrar nuestros productos seleccionados)
 
 
- const detallesProductos = document.querySelector('.product-detail');
+ const chopingCardContainer = document.querySelector('#chopingCardContainer');
  const carChoppingIcon = document.querySelector('.navbar-shopping-cart');
 
  carChoppingIcon.addEventListener("click", function(){
@@ -44,7 +44,7 @@ navbarEmail.addEventListener("click", function() {
    if (!isMobileMenuclosed){
       menuMobile.classList.add('inactive');
    }
-  detallesProductos.classList.toggle('inactive');
+   chopingCardContainer.classList.toggle('inactive');
  })
 
 
