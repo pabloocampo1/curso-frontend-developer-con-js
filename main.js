@@ -1,4 +1,5 @@
-
+const productoDetalleDetail = document.querySelector('#productDetail');
+const exitDetalleDetail = document.querySelector('.product-detail-close');
 //menu destok
 
 const menuDestok = document.querySelector('.desktop-menu');
@@ -28,6 +29,7 @@ navbarEmail.addEventListener("click", function() {
       chopingCardContainer.classList.add('inactive');
    }
 
+   productoDetalleDetail.classList.add('inactive');
    menuMobile.classList.toggle('inactive');
  });
 
@@ -44,8 +46,14 @@ navbarEmail.addEventListener("click", function() {
    if (!isMobileMenuclosed){
       menuMobile.classList.add('inactive');
    }
+   const isProductDetailClosed =  productoDetalleDetail.classList.contains('inactive');
+   
+   if (!isProductDetailClosed){
+      productoDetalleDetail.classList.add('inactive');
+   }
    chopingCardContainer.classList.toggle('inactive');
- })
+
+})
 
 
 
@@ -74,18 +82,6 @@ navbarEmail.addEventListener("click", function() {
    image:'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
  })
 
- /* <div class="product-card">
-        <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
-      <div class="product-info">
-          <div>
-            <p>$120,00</p>
-            <p>Bike</p>
-          </div>
-          <figure>
-            <img src="./icons/bt_add_to_cart.svg" alt="">
-          </figure>
-      </div>
-    </div> */
 
  //maquetacion html desde js para los productos
 
@@ -99,6 +95,16 @@ navbarEmail.addEventListener("click", function() {
    
       const productImg = document.createElement('img');
       productImg.setAttribute('src', product.image);
+      productImg.addEventListener("click", function(){
+
+         chopingCardContainer.classList.add('inactive');
+         productoDetalleDetail.classList.remove('inactive');
+      });
+
+
+      exitDetalleDetail.addEventListener('click', function(){
+         productoDetalleDetail.classList.add('inactive');
+      });
    
       const productInfo = document.createElement('div');
       productInfo.classList.add('product-info');

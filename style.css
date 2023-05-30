@@ -129,11 +129,11 @@
   /* menu mobile */
 
   .mobile-menu {
-    padding: 24px;
+    padding-left: 10%;
     position: absolute;
     top: 9%;
     left: 0;
-    width: 100%;
+    width: 90%;
     background-color: var(--white);
   }
   .mobile-menu a {
@@ -389,6 +389,9 @@
     .product-card img {
       width: 140px;
       height: 140px;
+    }
+    aside {
+      width: 100%;
     }
    
   }
